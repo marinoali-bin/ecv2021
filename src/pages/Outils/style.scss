@@ -1,0 +1,62 @@
+.outils {
+	overflow: hidden;
+	width: 100%;
+	min-height: 100vh;
+	padding: 0 60px;
+
+	.outils-ctn {
+		display: flex;
+		position: relative;
+
+		.outils-box:first-child {
+			display: flex;
+
+			position: absolute;
+			top: 50%;
+			left: 50vw;
+			transform: translate3d(-50%, -39%, 0);
+
+			//opacity: 0.7;
+
+			h1 {
+				font-size: 26vmin;
+				text-transform: uppercase;
+				margin: 0;
+				padding: 0;
+				line-height: 36vmin;
+				letter-spacing: -0.2em;
+
+				&:nth-child(2n) {
+					color: white;
+					-webkit-text-stroke: 2px black;
+				}
+			}
+		}
+
+		.outils-box:nth-child(2) {
+			display: flex;
+			position: absolute;
+			top: 50%;
+			left: -50vw;
+			transform: translate3d(-30%, 39%, 0);
+			//transform: translate3d(50%, 50%, 0);
+
+			h1 {
+				font-size: 26vmin;
+				text-transform: uppercase;
+				color: black;
+				line-height: 26vmin;
+				letter-spacing: -0.1em;
+
+				&:nth-child(2n + 1) {
+					color: white;
+					-webkit-text-stroke: 2px black;
+				}
+
+				&:hover {
+					color: chocolate;
+				}
+			}
+		}
+	}
+}

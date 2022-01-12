@@ -1,0 +1,96 @@
+//font-family: 'Roboto Mono', monospace;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700;800&family=Roboto+Mono:ital,wght@0,200;0,400;0,700;1,200&family=Roboto:wght@100;300;400;700;900&display=swap");
+
+//font-family: 'Open Sans', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700;800&display=swap");
+
+//font-family: 'Roboto', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700;800&family=Roboto:wght@100;300;400;700;900&display=swap");
+
+//
+@font-face {
+	font-family: "NeueMontreal";
+	src: url("./font/NeueMontreal-Bold.otf");
+}
+//
+@font-face {
+	font-family: "Signature";
+	src: url("./font/Autograf_PersonalUseOnly.ttf");
+}
+
+//
+
+html {
+	//
+	font-family: "Roboto", sans-serif;
+	font-size: 18px;
+	//letter-spacing: 0.07em;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+a {
+	pointer-events: none;
+	//user-select: none;
+}
+
+h1.mega {
+	font-size: 5.653rem;
+	line-height: 112px;
+}
+
+h1.maxi {
+	font-size: 3.998rem;
+	line-height: 80px;
+}
+
+h1 {
+	//font-family: NeueMontreal;
+	font-size: 2.827rem;
+	line-height: 80px;
+	font-weight: 800;
+}
+
+h2 {
+	font-size: 1.999rem;
+	line-height: 40px;
+}
+
+h3 {
+	font-size: 1.414rem;
+	line-height: 32px;
+}
+
+h4 {
+	font-size: 1rem;
+	line-height: 24px;
+}
+
+h5,
+.mini {
+	font-family: "Roboto Mono", monospace;
+	font-size: 0.707rem;
+	line-height: 16px;
+}
+
+h6,
+.nano {
+	font-family: "Roboto Mono", monospace;
+	font-size: 0.5rem;
+	line-height: 12px;
+}
+
+p {
+	font-size: 1rem;
+	line-height: 1.5rem;
+	margin-top: 1.5rem;
+	line-height: 24px;
+}
+
+br {
+	line-height: 24px;
+}

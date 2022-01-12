@@ -1,0 +1,54 @@
+$dimension: 28vmin;
+
+.portfolio {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	min-height: 100vh;
+
+	.portfolio-ctn {
+		position: relative;
+		object-fit: cover;
+		width: 31%;
+
+		.illustration {
+			background-color: black;
+			width: 100%;
+			max-height: 50vmin;
+			overflow: hidden;
+			z-index: -1;
+		}
+
+		.title {
+			z-index: 100;
+			font-weight: 400;
+			font-size: 12px;
+			color: #1a1a1a;
+			position: absolute;
+			//
+			top: -24px;
+			left: 0px;
+		}
+		.description {
+			z-index: 100;
+			position: absolute;
+			display: inline-block;
+			font-size: 24px;
+			color: white;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: -60px;
+			width: 22vw;
+			font-weight: 500;
+			background-color: black;
+			padding: 14px 20px;
+			line-height: 1.3em;
+		}
+
+		&.active {
+			.title {
+				top: -200px;
+			}
+		}
+	}
+}
