@@ -1,5 +1,33 @@
-.signature {
-	width: 30vw;
-	height: auto;
-	margin: auto;
+.volet {
+	z-index: 10000;
+	//background-color: #111;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100vw;
+	transform-origin: bottom;
+
+	background-color: #111;
+	transform: scaleY(0);
+}
+
+.home {
+	background-color: #fff;
+	position: relative;
+
+	.volet {
+		position: absolute;
+		transform-origin: bottom;
+		bottom: 0;
+		left: 0;
+		height: 100vh;
+		width: 100%;
+		transform: scaleY(0%);
+	}
+
+	.signature {
+		width: 30vw;
+		height: auto;
+		margin: auto;
+	}
 }

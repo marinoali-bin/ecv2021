@@ -10,17 +10,136 @@
 	width: 100%;
 	height: 100%;
 	//cursor: none;
+
+	.carre {
+		z-index: 700;
+		position: fixed;
+		left: 45%;
+		top: 40%;
+		width: 150px;
+		height: 150px;
+		background-color: yellowgreen;
+		margin: auto;
+		pointer-events: all;
+	}
 }
 
 body {
 	overscroll-behavior-y: none;
 	height: 100%;
+	background-color: #111;
+	position: relative;
 }
 
 .page {
-	padding: 60px;
+	//padding: 60px;
 	width: 100vw;
+
 	min-height: 100vh;
 	display: flex;
+	outline: none;
+	border: none;
 	//border-bottom: 1px dashed lightgreen;
+
+	.lBtn,
+	.rBtn {
+		height: 50px;
+		width: 130px;
+		display: flex;
+		position: absolute;
+		top: 50%;
+		overflow: hidden;
+
+		.txt {
+			color: #7d7d7d;
+			position: absolute;
+			top: 0px;
+			left: 50%;
+			transform: translateX(-50%);
+			text-transform: capitalize;
+			opacity: 0.6;
+			pointer-events: none;
+			font-weight: 300;
+			transition: 0.6s ease-out;
+		}
+
+		&:hover {
+			.txt {
+				color: orange;
+				opacity: 1;
+			}
+		}
+	}
+
+	.lBtn {
+		//background-color: #4d4d4d;
+
+		justify-content: flex-start;
+		align-items: center;
+
+		.traits-fins {
+			height: 2px;
+			width: 130 * 3px;
+			display: flex;
+
+			//background-color: yellow;
+
+			transition: 0.6s ease-in-out;
+
+			.trait-fin {
+				width: 130px;
+				height: 1px;
+				background-color: #7d7d7d;
+
+				&:first-child {
+					margin-right: 130px;
+				}
+
+				&:nth-child(2) {
+					background-color: orange;
+				}
+			}
+		}
+
+		&:hover .traits-fins {
+			transform: translateX(-260px);
+		}
+	}
+	.rBtn {
+		width: 130px;
+
+		//background-color: #4d4d4d;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		position: absolute;
+		right: 60px;
+		top: 50%;
+		overflow: hidden;
+
+		.traits-fins {
+			height: 2px;
+			width: 130 * 3px;
+			display: flex;
+
+			//background-color: yellow;
+
+			transition: 0.6s ease-in-out;
+
+			.trait-fin {
+				width: 130px;
+				height: 1px;
+				background-color: #7d7d7d;
+
+				&:first-child {
+					margin-right: 130px;
+					background-color: orange;
+				}
+			}
+		}
+
+		&:hover .traits-fins {
+			transform: translateX(260px);
+		}
+	}
 }

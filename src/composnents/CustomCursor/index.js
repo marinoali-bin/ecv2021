@@ -1,9 +1,11 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useState, useRef } from "react"
 import "./style.scss"
 
-const CustomCursor = () => {
+export const CustomCursor = () => {
 	const cursorRef1 = useRef(null)
 	const cursorRef2 = useRef(null)
+
+	//const [etatCurs0, setEtatCurso] = useState(etatCurs)
 
 	useEffect(() => {
 		document.addEventListener("mousemove", (event) => {
@@ -20,9 +22,9 @@ const CustomCursor = () => {
 	}, [document])
 
 	return (
-		<div className="custom-cursor">
-			<div ref={cursorRef1} className="custom-cursor-1"></div>
-			<div ref={cursorRef2} className="custom-cursor-2"></div>
+		<div className="custom__cursor">
+			<div ref={cursorRef1} className="custom__cursor__inner"></div>
+			<div ref={cursorRef2} className="custom__cursor__outer"></div>
 		</div>
 	)
 }

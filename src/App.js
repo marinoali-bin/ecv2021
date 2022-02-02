@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react"
+import React, { useRef, useEffect, useState } from "react"
 import "./App.scss"
 import CustomCursor from "./composnents/CustomCursor"
 import Acceuil from "./pages/Acceuil"
@@ -6,14 +6,16 @@ import Contacts from "./pages/Contacts"
 import Formation from "./pages/Formation"
 import Portfolio from "./pages/Portfolio"
 import useWindowSize from "./hooks/useWindowSize"
-import Test from "./pages/Test/Test"
+//import Test from "./pages/Test/Test"
 import Outils from "./pages/Outils"
 import Moi from "./pages/Moi"
+import ScrollTest from "./pages/ScrollTest"
 
 function App() {
 	const size = useWindowSize()
 	const app = useRef()
 	const scrollContainer = useRef()
+	const carre = useRef()
 
 	const skewConfigs = {
 		ease: 0.1,
@@ -56,20 +58,15 @@ function App() {
 
 	return (
 		<div ref={app} className="App">
-			{/* <CustomCursor /> */}
+			<CustomCursor etatCurs />
+			<div className="carre" ref={carre}></div>
 			<div ref={scrollContainer} className="scroll">
 				<Acceuil />
 				<Moi />
-				<Formation />
-				<Outils />
 				<Portfolio />
-				<Contacts />
-
-				<Test />
-				<Test />
-				<Test />
-				<Test />
-				<Test />
+				{/* <Outils />
+				<Formation />
+				<Contacts /> */}
 			</div>
 		</div>
 	)

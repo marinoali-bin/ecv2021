@@ -1,42 +1,87 @@
 $dimension: 28vmin;
 
+@mixin centrerAbs {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform-style: preserve-3d;
+}
+
+Tilt {
+	left: 500px;
+}
+
+.ptflio {
+	background-color: #111;
+	position: relative;
+	max-width: 1440px;
+}
+
 .portfolio {
+	width: 100vw;
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	min-height: 100vh;
+	background-color: #fff;
+	border: #111 1px solid;
 
 	.portfolio-ctn {
 		position: relative;
-		object-fit: cover;
-		width: 31%;
+		margin: auto;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.backBox {
+			height: 35vmin;
+			width: 60vw;
+			top: 0;
+			left: 0;
+			background-color: #111;
+			// background: radial-gradient(
+			// 	circle,
+			// 	rgba(156, 84, 50, 1) 40%,
+			// 	rgba(147, 47, 0, 1) 100%
+			// );
+		}
 
 		.illustration {
-			background-color: black;
-			width: 100%;
-			max-height: 50vmin;
-			overflow: hidden;
-			z-index: -1;
+			@include centrerAbs();
+			transform: translateX(-50%) translateY(-50%) translateZ(30px)
+				perspective(800px);
+			height: 75vh;
+			width: 64vw;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+				display: inline-block;
+			}
 		}
 
 		.title {
-			z-index: 100;
-			font-weight: 400;
-			font-size: 12px;
-			color: #1a1a1a;
-			position: absolute;
-			//
-			top: -24px;
-			left: 0px;
+			@include centrerAbs();
+			font-size: 10vmin;
+			font-weight: 900;
+			color: #fff;
+			transform-style: preserve-3d;
+			transform: translateX(-50%) translateY(-50%) translateZ(60px)
+				perspective(800px);
+			white-space: nowrap;
+			transition: 0.4s ease-out;
+
+			&:hover {
+				transform: translateX(-50%) translateY(-50%) translateZ(175px)
+					scale(1.1);
+			}
 		}
 		.description {
-			z-index: 100;
 			position: absolute;
 			display: inline-block;
 			font-size: 24px;
 			color: white;
-			left: 50%;
 			transform: translateX(-50%);
+			right: -30%;
 			bottom: -60px;
 			width: 22vw;
 			font-weight: 500;
