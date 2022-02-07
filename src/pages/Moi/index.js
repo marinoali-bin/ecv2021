@@ -136,7 +136,7 @@ const Moi = ({ scrollCtn }) => {
 					Atque porro neque ex sequi animi voluptas totam deleniti!
 				</p>
 			</div>
-			<div ref={bigTxt} className="bigTxt-ctn">
+			<div ref={bigTxt} className="cfx bigTxt-ctn">
 				<h1>
 					<span ref={bigL} className="bigTxt ">
 						MAR

@@ -24,7 +24,7 @@ const DigitalDesigner = () => {
 				// onMouseLeave={handleMouseLeave}
 				className="box1 cursorAnim"
 			>
-				digital <span className="color__prime">designer</span>
+				<span className="color__prime"></span>
 			</h1>
 		</div>
 	)

@@ -1,15 +1,78 @@
 import React, { useRef, useEffect, useState } from "react"
 import "./App.scss"
-import CustomCursor from "./composnents/CustomCursor"
+import CustomCursor from "./components/CustomCursor"
+import useWindowSize from "./hooks/useWindowSize"
+
 import Acceuil from "./pages/Acceuil"
 import Contacts from "./pages/Contacts"
 import Formation from "./pages/Formation"
-import Portfolio from "./pages/Portfolio"
-import useWindowSize from "./hooks/useWindowSize"
-//import Test from "./pages/Test/Test"
 import Outils from "./pages/Outils"
+import Portfolio from "./pages/Portfolio"
 import Moi from "./pages/Moi"
-import ScrollTest from "./pages/ScrollTest"
+
+import { gsap, Power3, Elastic, Back } from "gsap"
+//import { CSSPlugin } from "gsap/CSSPlugin"
+import { CustomEase } from "gsap/CustomEase"
+
+// let myEase = CustomEase.create(
+// 	"custom",
+// 	"M0,0 C0,0 0.056,-0.016 0.192,-0.03 0.531,-0.064 0.324,1.018 0.536,1.054 0.681,1.078 0.698,0.944 0.756,0.944 0.82,0.944 0.804,1.021 0.85,1.022 0.892,1.022 0.908,1 0.956,1 0.989,1 1,1 1,1 "
+// )
+let myEase = CustomEase.create(
+	"custom",
+	"M0,0 C0,0 0.057,0.019 0.074,0 0.164,-0.156 0.238,-0.13 0.328,-0.09 0.486,-0.018 0.346,1.018 0.558,1.054 0.703,1.078 0.698,0.944 0.756,0.944 0.82,0.944 0.804,1.021 0.85,1.022 0.892,1.022 0.908,1 0.956,1 0.989,1 1,1 1,1 "
+)
+
+const targetsCursor = () => {
+	//const tCurso = document.querySelector(".tcursor1")
+	//tCurso.addEventListener("mouseenter", (e) => console.log(e))
+
+	//const tCursors = document.querySelectorAll(".tcursor")
+
+	const c1 = document.querySelector(".cercle1")
+	const c2 = document.querySelector(".cercle2")
+
+	let scale = 2
+
+	gsap.utils.toArray(".cfx").forEach((element) => {
+		let ele = element
+
+		ele.addEventListener("mouseenter", (e) => {
+			gsap.to(c1, {
+				scale: scale,
+				duration: 0.8,
+				ease: myEase,
+				onStart: () => {
+					c1.classList.add("filtrer")
+					console.log(c1.classList)
+				}
+			})
+			gsap.to(c2, {
+				scale: 0,
+				opacity: 0,
+				duration: 1.3,
+				ease: myEase,
+				onStart: () => {
+					c1.classList.remove("filtrer")
+					console.log(c1.classList)
+				}
+			})
+		})
+		ele.addEventListener("mouseleave", (e) => {
+			gsap.to(c1, {
+				scale: 1,
+				duration: 0.6,
+				ease: Back.easeInOut
+			})
+			gsap.to(c2, {
+				scale: 1,
+				opacity: 1,
+				duration: 1.3,
+				ease: myEase
+			})
+		})
+	})
+}
 
 function App() {
 	const size = useWindowSize()
@@ -25,10 +88,16 @@ function App() {
 	}
 
 	useEffect(() => {
+		targetsCursor()
+	}, [])
+
+	useEffect(() => {
 		document.body.style.height = `${
 			scrollContainer.current.getBoundingClientRect().height
 		}px`
 	}, [size.height])
+
+	//skewScrolling
 
 	useEffect(() => {
 		requestAnimationFrame(() => skewScrolling())
@@ -58,15 +127,15 @@ function App() {
 
 	return (
 		<div ref={app} className="App">
-			<CustomCursor etatCurs />
-			<div className="carre" ref={carre}></div>
+			<CustomCursor />
+			{/* <div className="tcursor carre " ref={carre}></div> */}
 			<div ref={scrollContainer} className="scroll">
 				<Acceuil />
 				<Moi />
 				<Portfolio />
-				{/* <Outils />
+				<Outils />
 				<Formation />
-				<Contacts /> */}
+				<Contacts />
 			</div>
 		</div>
 	)

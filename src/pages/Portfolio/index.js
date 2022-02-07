@@ -26,9 +26,13 @@ const Portfolio = () => {
 
 	const creations = datas.map((data) => {
 		return (
-			<Tilt options={options} key={data.id} className="portfolio-ctn">
+			<Tilt
+				options={options}
+				key={data.id}
+				className=" tcursor portfolio-ctn"
+			>
 				<div className="backBox"></div>
-				<div className="illustration">
+				<div className="illustration ">
 					<img
 						//style={{ zIndex: "110" }}
 						src={data.imageUrl}

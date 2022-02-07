@@ -3,7 +3,7 @@ import lottie from "lottie-web"
 import "./style.scss"
 import { gsap, Power3, Power4, Back } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import DigitalDesigner from "../../composnents/DigitalDesigner"
+import DigitalDesigner from "../../components/DigitalDesigner"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -89,7 +89,7 @@ const Acceuil = () => {
 				<div className="volet">
 					<DigitalDesigner />
 				</div>
-				<div ref={signatureCtn} className="signature"></div>
+				<div ref={signatureCtn} className="signature cfx"></div>
 			</div>
 		</>
 	)

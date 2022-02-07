@@ -1,0 +1,37 @@
+$cursorSize: 55px;
+
+.cercle1 {
+	height: 100px;
+	width: 100px;
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	z-index: 1000;
+	pointer-events: none;
+	will-change: transform;
+	mix-blend-mode: difference;
+
+	circle {
+		fill: white;
+	}
+
+	// &.filtrer {
+	// 	mix-blend-mode: difference;
+	// 	background-color: #fff;
+	// }
+}
+.cercle2 {
+	height: 30px;
+	width: 30px;
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	z-index: 1100;
+	pointer-events: none;
+	will-change: transform;
+	mix-blend-mode: difference;
+
+	circle {
+		fill: white;
+	}
+}
