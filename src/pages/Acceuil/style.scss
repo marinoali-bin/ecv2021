@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;400;500;700;800&family=Roboto+Mono:ital,wght@0,200;0,400;0,700;1,200&display=swap");
 .volet {
 	z-index: 10000;
 	//background-color: #111;
@@ -12,8 +13,9 @@
 }
 
 .home {
-	background-color: #fff;
+	background-color: #d0d0d0;
 	position: relative;
+	overflow: hidden;
 
 	.volet {
 		position: absolute;
@@ -25,9 +27,42 @@
 		transform: scaleY(0%);
 	}
 
-	.signature {
-		width: 30vw;
-		height: auto;
-		margin: auto;
+	.texte__box {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 60px;
+		z-index: 900;
+		h1 {
+			//color: white;
+			color: #111;
+			//:first-child
+			font-family: "Bebas Neue", sans-serif;
+
+			margin: 0;
+			padding: 0;
+
+			position: relative;
+			overflow: hidden;
+			height: 16vw;
+			width: 100vw;
+			//background-color: goldenrod;
+			font-size: 20.5vw;
+			letter-spacing: -7px;
+
+			.ligne {
+				position: absolute;
+				height: 120px;
+				top: 40%;
+				z-index: 200;
+			}
+			.ligne__cachee {
+				position: absolute;
+				height: 120px;
+				top: 40%;
+
+				z-index: 200;
+			}
+		}
 	}
 }

@@ -35,13 +35,7 @@ export const CustomCursor = () => {
 	return (
 		<>
 			<svg className="cercle1" ref={cercle1Ref}>
-				<circle
-					cx="50"
-					cy="50"
-					r="40"
-					//stroke="black"
-					// strokeWidth="3"
-				/>
+				<circle cx="50" cy="50" r="40" stroke="black" strokeWidth="1" />
 			</svg>
 
 			<svg className="cercle2" ref={cercle2Ref}>

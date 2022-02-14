@@ -1,0 +1,25 @@
+.arrows {
+	width: auto;
+	height: 100px;
+
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+	align-content: space-between;
+	align-self: flex-end;
+
+	z-index: 2100;
+	overflow: hidden;
+
+	left: 50%;
+	bottom: 20px;
+
+	.arrow {
+		.arrow {
+			top: -50px;
+		}
+		.arrow2 {
+		}
+	}
+}

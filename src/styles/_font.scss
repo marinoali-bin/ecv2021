@@ -18,11 +18,27 @@
 	src: url("./font/Autograf_PersonalUseOnly.ttf");
 }
 
+@font-face {
+	font-family: "Open-sauce-sb";
+	src: url("./font/OpenSauceSans-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Open-sauce-lt";
+	src: url("./font/OpenSauceSans-Light.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Open-sauce-b";
+	src: url("./font/OpenSauceSans-Bold.woff2") format("woff2");
+}
+
 //
 
 html {
 	//
-	font-family: "Roboto", sans-serif;
+	//font-family: "Roboto", sans-serif;
+	font-family: "Open-sauce-sb";
 	font-size: 18px;
 	//letter-spacing: 0.07em;
 }
@@ -53,6 +69,33 @@ h1 {
 	font-size: 2.827rem;
 	line-height: 80px;
 	font-weight: 800;
+}
+
+h1.title {
+	//color: white;
+	color: transparent;
+	-webkit-text-stroke: 2px #111;
+
+	//:first-child
+	font-family: "Bebas Neue", sans-serif;
+
+	margin: 0;
+	padding: 0;
+
+	position: relative;
+	overflow: hidden;
+	height: 16vw;
+	width: 100vw;
+	//background-color: goldenrod;
+	font-size: 20.5vw;
+	letter-spacing: -7px;
+
+	span {
+		position: absolute;
+		height: 120px;
+		top: 40%;
+		z-index: 200;
+	}
 }
 
 h2 {
