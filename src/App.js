@@ -1,13 +1,9 @@
-import React, {
-	useRef,
-	useEffect,
-	useState,
-	createContext,
-	useContext
-} from "react"
+import React, { useRef, useEffect } from "react"
 import "./App.scss"
+
 import CustomCursor from "./components/CustomCursor"
-import useWindowSize from "./hooks/useWindowSize"
+
+//import useWindowSize from "./hooks/useWindowSize"
 
 import Header from "./components/Header"
 import Acceuil from "./pages/Acceuil"
@@ -15,19 +11,22 @@ import Contacts from "./pages/Contacts"
 import Formation from "./pages/Formation"
 import Outils from "./pages/Outils"
 import Portfolio from "./pages/Portfolio"
-import Moi from "./pages/Moi"
+//import Moi from "./pages/Moi"
 import Qui from "./pages/Qui/Qui"
-import Loading from "./pages/Loading/Loading"
+//import Loading from "./pages/Loading/Loading"
 
-import { gsap, Power3, Elastic, Back } from "gsap"
+import { gsap, Back } from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
 //import { CSSPlugin } from "gsap/CSSPlugin"
 import { CustomEase } from "gsap/CustomEase"
+
+gsap.registerPlugin(ScrollTrigger)
 
 // let myEase = CustomEase.create(
 // 	"custom",
 // 	"M0,0 C0,0 0.056,-0.016 0.192,-0.03 0.531,-0.064 0.324,1.018 0.536,1.054 0.681,1.078 0.698,0.944 0.756,0.944 0.82,0.944 0.804,1.021 0.85,1.022 0.892,1.022 0.908,1 0.956,1 0.989,1 1,1 1,1 "
 // )
-const pageContext = createContext(null)
+//const pageContext = createContext(null)
 
 let myEase = CustomEase.create(
 	"custom",
@@ -86,77 +85,31 @@ const targetsCursor = () => {
 }
 
 function App() {
-	const size = useWindowSize()
+	//const size = useWindowSize()
 	const app = useRef()
-	const scrollContainer = useRef()
-	const carre = useRef()
+	const scrollContainer = useRef(null)
+	//const carre = useRef()
 
-	const [loading, setLoading] = useState(true)
-	//const [page, setPage] = useState("")
-
-	const skewConfigs = {
-		ease: 0.1,
-		current: 0,
-		previous: 0,
-		rounded: 0
-	}
+	//const scrollRef = React.createRef()
 
 	useEffect(() => {
-		setTimeout(() => {
-			setLoading(false)
-		}, 5000)
-
 		targetsCursor()
-	}, [loading])
-
-	useEffect(() => {
-		document.body.style.height = `${
-			scrollContainer.current.getBoundingClientRect().height
-		}px`
-	}, [size.height])
-
-	//skewScrolling
-
-	useEffect(() => {
-		requestAnimationFrame(() => skewScrolling())
 	}, [])
 
-	const skewScrolling = () => {
-		skewConfigs.current = window.scrollY
-
-		skewConfigs.previous +=
-			(skewConfigs.current - skewConfigs.previous) * skewConfigs.ease
-
-		skewConfigs.rounded = Math.round(skewConfigs.previous * 100) / 100
-
-		// variables
-
-		const difference = skewConfigs.current - skewConfigs.rounded
-		const acceleration = difference / size.width
-		const velocy = +acceleration
-		const skew = velocy * 7.5
-
-		//
-		scrollContainer.current.style.transform = `translateY(-${
-			skewConfigs.rounded
-		}px) skewY(${skew * 1.5}deg)`
-		requestAnimationFrame(() => skewScrolling())
-	}
-
-	const handleLoadPage = () => {
-		console.log("handleLoadPage !!!")
-		setLoading(false)
-	}
+	useEffect(() => {}, [])
 
 	return (
 		<div ref={app} className="App">
 			<CustomCursor />
 
-			<div ref={scrollContainer} className="scroll">
+			<div
+				data-scroll-section
+				ref={scrollContainer}
+				id="scroll-container"
+			>
 				<Header />
 				<Acceuil />
 				<Qui />
-				<Moi />
 				<Portfolio />
 				<Outils />
 				<Formation />

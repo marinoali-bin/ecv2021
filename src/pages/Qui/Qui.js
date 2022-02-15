@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react"
 import "./style.scss"
-import gsap, { SplitChars } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import gsap from "gsap"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -12,7 +12,7 @@ const Qui = () => {
 	useEffect(() => {
 		let q = gsap.utils.toArray(".ligne__deco__1")
 
-		q.map((qt) => {
+		q.forEach((qt) => {
 			gsap.fromTo(
 				qt,
 				{

@@ -8,8 +8,6 @@ const StrokeScroll = () => {
 	const arrow = useRef()
 	const arrowBox = useRef()
 	useEffect(() => {
-		console.log(arrowBox.current)
-
 		gsap.fromTo(
 			arrow.current,
 			{

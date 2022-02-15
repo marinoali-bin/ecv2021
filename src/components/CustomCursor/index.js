@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react"
-import useWindowSize from "../../hooks/useWindowSize"
+import React, { useEffect, useRef } from "react"
+//import useWindowSize from "../../hooks/useWindowSize"
 import "./style.scss"
 import gsap from "gsap"
 
@@ -11,7 +11,7 @@ export const CustomCursor = () => {
 		document.addEventListener("mousemove", (e) => {
 			const { clientX, clientY } = e
 
-			const { clientHeight, clientWidth } = cercle1Ref.current
+			//const { clientHeight, clientWidth } = cercle1Ref.current
 
 			const c1 = document.querySelector(".cercle1")
 			const c2 = document.querySelector(".cercle2")

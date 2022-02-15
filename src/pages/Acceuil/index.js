@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react"
-import lottie from "lottie-web"
+//import lottie from "lottie-web"
 import "./style.scss"
-import { gsap, Power3, Power4, Back } from "gsap"
+import { gsap, Power3 } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 //import DigitalDesigner from "../../components/DigitalDesigner"
 //import Video1 from "../../components/Video/Video1"
@@ -15,12 +15,12 @@ gsap.registerPlugin(ScrollTrigger, CustomEase)
 const Acceuil = () => {
 	//const signatureCtn = useRef(null)
 	const homePage = useRef(null)
-	const txtBox = useRef(null)
+	//const txtBox = useRef(null)
 
-	let myEase = CustomEase.create(
-		"custom",
-		"M0,0 C0,0 0.057,0.019 0.074,0 0.164,-0.156 0.238,-0.13 0.328,-0.09 0.486,-0.018 0.346,1.018 0.558,1.054 0.703,1.078 0.698,0.944 0.756,0.944 0.82,0.944 0.804,1.021 0.85,1.022 0.892,1.022 0.908,1 0.956,1 0.989,1 1,1 1,1 "
-	)
+	// let myEase = CustomEase.create(
+	// 	"custom",
+	// 	"M0,0 C0,0 0.057,0.019 0.074,0 0.164,-0.156 0.238,-0.13 0.328,-0.09 0.486,-0.018 0.346,1.018 0.558,1.054 0.703,1.078 0.698,0.944 0.756,0.944 0.82,0.944 0.804,1.021 0.85,1.022 0.892,1.022 0.908,1 0.956,1 0.989,1 1,1 1,1 "
+	// )
 
 	useEffect(() => {
 		let mesLignes = gsap.utils.toArray(".ligne")
