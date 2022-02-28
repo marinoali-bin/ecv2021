@@ -1,13 +1,16 @@
 .quiPage {
 	background-color: #d0d0d0;
-	height: 200vh;
+	min-height: 200vh;
+	height: auto;
 	position: relative;
 	padding: 200px 60px;
+	display: flex;
 	//flex-direction: column;
-	//align-items: center;
-	//justify-content: space-evenly;
+	align-items: center;
+	justify-content: space-evenly;
 	margin: 0;
-	padding: 0;
+	padding: 60px;
+	overflow: hidden;
 
 	.trigga {
 		height: 20px;
@@ -25,30 +28,70 @@
 
 	.quiBox1 {
 		//border: 1px solid red;
-		width: 100%;
-
+		width: 70%;
+		display: flex;
+		flex-direction: column;
 		position: relative;
+		//align-items: center;
+		justify-content: center;
 
-		.ligne__deco__1 {
-			width: 100%;
-			height: 8px;
-			background-color: #111;
-			transform-origin: center;
-			margin: 60px 0;
+		h1.titre {
+			font-family: "Bebas Neue", sans-serif;
+			text-align: right;
+			//font-size: 3.998rem;
+			//font-size: 9.94vw;
+			font-size: 5.9vw;
+			line-height: 1em;
+			width: 50%;
+			//align-self: flex-end;
+
+			&.reverse {
+				text-align: right;
+				align-self: flex-end;
+			}
+		}
+
+		p.qui_txt {
+			width: 48%;
+			display: inline-block;
+			font-family: "Nhass-l" !important;
+			//font-weight: 700;
+			//font-size: clamp(24px, 3.47vw, 3.47vw);
+			font-size: 18px;
+			line-height: 1.5em;
+			text-align: left;
+			align-self: flex-end;
+			color: #5d5d5d;
+		}
+		p.p {
+			//background-color: bisque;
+			display: inline-block;
+			text-align: left;
+			width: 48%;
+			font-family: "Open-sauce-lt";
+			font-size: 18px;
+			line-height: 30px;
+			align-self: flex-end;
+			//padding-left: 15px;
+			color: #7d7d7d;
+			letter-spacing: 0.04em;
+			margin-top: 60px;
 		}
 
 		.qui__txtBlock__1 {
 			p {
-				font-family: "Open-sauce-sb";
-				height: 70pt;
+				//font-family: "Open-sauce-b";
+				height: 140pt;
 				width: 100%;
 				//background-color: aqua;
-
+				text-align: center;
 				position: relative;
 
 				margin: 0;
 				padding: 0;
 				letter-spacing: 0.05em;
+				//overflow: hidden;
+
 				//background-color: bisque;
 
 				span {
@@ -63,9 +106,9 @@
 					//text-align: center;
 					//border-top: 2px solid #111;
 					//border-bottom: 2px solid #111;
-					line-height: 3em;
+					line-height: 1.3em;
 
-					font-size: 60px;
+					font-size: 140px;
 					font-weight: 900;
 				}
 			}

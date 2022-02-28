@@ -33,6 +33,19 @@
 	src: url("./font/OpenSauceSans-Bold.woff2") format("woff2");
 }
 
+@font-face {
+	font-family: "Nhass-l";
+	src: url("./font/NHaasGroteskTXPro-55Rg.woff") format("woff");
+}
+@font-face {
+	font-family: "Nhass-n";
+	src: url("./font/NHaasGroteskTXPro-65Md.woff") format("woff");
+}
+@font-face {
+	font-family: "Nhass-b";
+	src: url("./font/NHaasGroteskTXPro-75Bd.woff") format("woff");
+}
+
 //
 
 html {
@@ -62,6 +75,11 @@ h1.mega {
 h1.maxi {
 	font-size: 3.998rem;
 	line-height: 80px;
+}
+
+h1.titre {
+	font-size: 3.998rem;
+	line-height: 1em;
 }
 
 h1 {
